@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
+title: Sparksfly's blog
+subtitle: SparksFly·Club
+description: '欢迎来到小仲的博客'
+keywords: SparksFly·Club
+author: 仲寒露
+language: zh-CN
 timezone: ''
 
 # URL
