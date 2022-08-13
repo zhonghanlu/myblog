@@ -3,18 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Sparksfly's blog
-subtitle: 'SparksFly·Club'
-description: 'SparksFly·Club'
-keywords: 仲寒露
-author: 仲寒露
-language: zh-CN
+title: Hexo
+subtitle: ''
+description: ''
+keywords:
+author: John Doe
+language: en
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://zhonghanlu.github.io/
-root: /myblog/
+url: https://zhonghanlu.club
+#root: /myblog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -106,9 +106,3 @@ deploy:
   type: 'git'
   repo: git@github.com:zhonghanlu/myblog.git
   branch: gh-pages
-
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 1000
