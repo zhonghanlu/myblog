@@ -107,4 +107,10 @@ deploy:
   repo: git@github.com:zhonghanlu/myblog.git
   branch: gh-pages
 
+# 站点地图
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
   
