@@ -34,9 +34,7 @@ jobs:
         run: |
           npm i -g hexo-cli
           npm i
+          gulp
       - name: Deploy hexo
         run: |
           hexo clean && hexo generate && hexo deploy
-      - name: gulp    
-        run: |
-          gulp
