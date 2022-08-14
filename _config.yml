@@ -15,7 +15,10 @@ timezone: ''
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://zhonghanlu.club/
 root: /
-permalink: :year/:month/:day/:title/
+permalink: archives/:abbrlink.html
+abbrlink:
+  alg: crc32  # 算法：crc16(default) and crc32
+  rep: hex    # 进制：dec(default) and hex
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -103,9 +106,10 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: 'git'
-  repo: git@github.com:zhonghanlu/myblog.git
-  branch: gh-pages
+  - type: 'git'
+    repo: git@github.com:zhonghanlu/myblog.git
+    branch: gh-pages
+  - type: baidu_url_submitter
 
 # 站点地图
 sitemap:
@@ -118,7 +122,10 @@ baidusitemap:
 baidu_url_submit:
   count: 10 # 提交最新的10个链接
   host: https://zhonghanlu.club/ # 百度站长平台中注册的域名
-  token: # 秘钥，百度站长平台 > 推送接口 > 接口调用地址中token字段
+  token: ls2eKQNMJkKvNPjU # 秘钥，百度站长平台 > 推送接口 > 接口调用地址中token字段
   path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里，不用改
 
-  
+nofollow:
+  enable: true
+  field: site
+  exclude: ''
