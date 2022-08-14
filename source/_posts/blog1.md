@@ -1,7 +1,9 @@
 ---
 title: blog1
+abbrlink: 6cc9eacc
 date: 2022-08-13 21:16:26
-tags:
+tags: Cloud
+categories: java
 ---
 
 ## ceshi1111

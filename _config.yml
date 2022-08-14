@@ -129,3 +129,47 @@ nofollow:
   enable: true
   field: site
   exclude: ''
+
+live2d:
+	enable: true
+	scriptFrom: local
+	model: 
+		use: live2d-widget-model-haruto #模型选择
+	display: 
+		position: right  #模型位置
+		width: 150       #模型宽度
+		height: 300      #模型高度
+	mobile: 
+		show: true      #是否在手机端显示
+
+douban:
+  user: mythsman
+  builtin: false
+  book:
+    title: 'This is my book title'
+    quote: 'This is my book quote'
+    meta: true
+    comments: true
+    top_img: https://cccccc.png
+    aside: true
+    path: books
+    limit:
+  movie:
+    title: 'This is my movie title'
+    quote: 'This is my movie quote'
+    meta: true
+    comments: true
+    top_img: https://cccccc.png
+    aside: true
+    path: movies
+    limit:
+  game:
+    title: 'This is my game title'
+    quote: 'This is my game quote'
+    meta: true
+    comments: true
+    top_img: https://cccccc.png
+    aside: true
+    path: games
+    limit:
+  timeout: 10000 
