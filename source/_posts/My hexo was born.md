@@ -7,7 +7,7 @@ description: 本站的建站小过程
 
 keywords: HEXO
 
-tags: HEXO CI SEO
+tags: HEXO,CI,SEO
 
 categories: 建站
 
@@ -52,7 +52,7 @@ sticky: 1
 
 ### 实操
 
-	#### 第一步安装Hexo
+#### 第一步安装Hexo
 
 安装Hexo的前提为已经将Hexo和nodejs安装完成了
 
