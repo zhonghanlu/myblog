@@ -125,7 +125,7 @@ hexo server //启动服务
 
 ![image-20220815135245042](https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/image-20220815135245042.png)
 
-设置完此分支基本上就大功告成了。有点需要注意的是，我访问github使用ssh密钥方式访问的，如过使用https访问的话需要进行配置token，这个token也很好找，在头像下面有个setting进入随机会有有个devpl...啥的，进去就能看见token的获取，名字随便填，生成完之后需要将token保存下来，此token只会显示这一次
+设置完此分支基本上就大功告成了。有点需要注意的是，我访问github使用ssh密钥方式访问的，如过使用https访问的话需要进行配置token，这个token也很好找，在头像下面有个setting进入随机会有有个devpl...啥的，进去就能看见token的获取，名字随便填，生成完之后需要将token保存下来，此token只会显示这一次。仓库的秘钥设置下，名字记住便于后面Actions的自动部署。
 
 ![image-20220815135602133](https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/image-20220815135602133.png)
 
