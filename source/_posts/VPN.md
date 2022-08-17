@@ -1,7 +1,7 @@
 ---
 title: VPN
 
-date: 2022年8月16日14:33:07
+date: 2022-8-16 14:33:07
 
 description: 高速翻墙VPN推荐
 
