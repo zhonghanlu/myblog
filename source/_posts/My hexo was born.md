@@ -1,7 +1,7 @@
 ---
 title: My hexo was born
 
-date: 2022年8月15日15:08:16
+date: 2022-8-15 15:08:16
 
 description: 本站的建站小过程
 
