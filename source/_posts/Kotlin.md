@@ -10,7 +10,6 @@ keywords: Kotlin
 tags: 
   - Kotlin
   - Android
-  - 
 categories: Kotlin
 
 ---
