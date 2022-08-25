@@ -1,22 +1,13 @@
-***
-
+---
 title: Kotlin Base
-
 date: 2022-08-25 11:47:53
-
 description: Kotlin 基础教程
-
 keywords: Kotlin 
-
 tags: 
-
-​	-Kotlin
-
-​	-Android 
-
+ 	- Kotlin
+  - Android 
 categories: Kotlin
-
-***
+---
 
 ## HelloWorld
 
