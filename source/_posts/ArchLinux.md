@@ -1,7 +1,7 @@
 ---
 title: ArchLinux install
 
-date: 2022年9月19日16:34:03
+date: 2022-9-19 16:34:03
 
 description: WIN11 完整刷机 ArchLinux
 
