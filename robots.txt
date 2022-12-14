@@ -1,0 +1,6 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://zhonghanlu.club/sitemap.xml
+Sitemap: https://zhonghanlu.club/baidusitemap.xml
