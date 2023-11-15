@@ -1,0 +1,441 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>ArchLinux install | Sparksfly's blog</title><meta name="keywords" content="ArchLinux"><meta name="author" content="仲寒露"><meta name="copyright" content="仲寒露"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="WIN11 完整刷机 ArchLinux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ArchLinux install">
+<meta property="og:url" content="https://zhonghanlu.club/archives/27ab9b42.html">
+<meta property="og:site_name" content="Sparksfly&#39;s blog">
+<meta property="og:description" content="WIN11 完整刷机 ArchLinux">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/20220814224611.png">
+<meta property="article:published_time" content="2022-09-19T16:34:03.000Z">
+<meta property="article:modified_time" content="2023-11-15T09:32:38.919Z">
+<meta property="article:author" content="仲寒露">
+<meta property="article:tag" content="ArchLinux">
+<meta property="article:tag" content="System">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/20220814224611.png"><link rel="shortcut icon" href="/./img/icon.png"><link rel="canonical" href="https://zhonghanlu.club/archives/27ab9b42"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="code-TFkglBI4Yq"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 仲寒露","link":"链接: ","source":"来源: Sparksfly's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ArchLinux install',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-11-15 09:32:38'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/u=2492658440,3997118136&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 功能</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> Photo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/20220814224611.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Sparksfly's blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 功能</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> Photo</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">ArchLinux install<a class="post-edit-link" href="https://github.com/zhonghanlu/myblog/tree/gh-pages_posts/ArchLinux.md" rel="external nofollow noreferrer" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-19T16:34:03.000Z" title="发表于 2022-09-19 16:34:03">2022-09-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-15T09:32:38.919Z" title="更新于 2023-11-15 09:32:38">2023-11-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/ArchLinux/">ArchLinux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="ArchLinux install"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="切换之前"><a href="#切换之前" class="headerlink" title="切换之前"></a>切换之前</h3><p>​	为啥需要换做ArchLinux系统呢，作为一个开发就应该用属于开发的系统，好不好！！！ 其实也是因为自己买不起MAC。在众多的Linux系统中最终我选择了Arch。Ubuntu我装了一次很方便，从制镜像到安装完成，共花费一小时。但是这个Ubuntu一直出毛病，要不然是显卡不能用了，要不然是连不上网了，网卡都给我干丢了，反正就是一直出问题，然后就想着换一个系统。选了大蜥蜴和Arch，网上评论众多，想了想像我这种爱折腾的Java小开发，那不得整个Arch。果不其然整了一天，终于整出来了，下面细细听我道来   （部分转载别人安装教程）</p>
+<h3 id="制作镜像"><a href="#制作镜像" class="headerlink" title="制作镜像"></a>制作镜像</h3><p>​	制作镜像我选择的是U盘制作，U盘格式成FAT32形式的，如果U盘是FATex的也不是不可以。用这个玩意就可以轻松制作启动盘了</p>
+<p><img src="https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/image-20220919165841611.png" alt="image-20220919165841611"></p>
+<p>镜像下载直接搜ArchLinux官网即可</p>
+<p>选择中国的镜像源 下载iso文件即可</p>
+<p>会清空磁盘的嗷谨慎操作嗷，盘符里的小电影注意点嗷</p>
+<h3 id="U盘启动基础安装"><a href="#U盘启动基础安装" class="headerlink" title="U盘启动基础安装"></a>U盘启动基础安装</h3><p>​	插上U盘进行重启，狂按12进行启动选择 ，我的拯救者狂按F12即可，选择U盘启动，U盘启动失败的就重新制启动盘，这个没办法。</p>
+<p>​	进行U盘启动，启动完成选择第一个UEFI形式安装  （可以提前看下自己的BIOS是什么模式，记住将安全启动关闭，进入BIOS将Ser那个玩意关闭再次进行U盘启动）</p>
+<p><img src="https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/image-20220919170331056.png" alt="image-20220919170331056"></p>
+<p>等待黑屏刷日志</p>
+<p>刷完即可进入安装程序</p>
+<p>首先更新时间（*这一步也是检查你网络是否通常，记住WIFI如果连不上就别连了，我整了整整四五个小时WIFI没成功，最后找到我们运维大哥给我插根网线，唉。放心刷完系统之后进去是可以使用WIFI的）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl set-ntp true</span><br></pre></td></tr></table></figure>
+
+<p>列出磁盘：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk -l</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;dev&#x2F;sda1 : EFI 系统分区，大小为 1024 MB，FAT32 格式。这为存储引导加载程序和引导所需的其他文件提供了空间。</p>
+<p>&#x2F;dev&#x2F;sda2 ： 交换分区，4GB 大小。交换空间用于将虚拟内存扩展到已安装的物理内存 (RAM) 之外，或用于挂起磁盘支持。</p>
+<p>&#x2F;dev&#x2F;sda3 ： Linux分区，剩余可用磁盘空间大小，EXT4格式。这是存储我们的 Arch Linux 操作系统、文件和其他信息的根 ( &#x2F; ) 分区。</p>
+<p>创建 EFI 系统分区</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cfdisk /dev/sda </span><br></pre></td></tr></table></figure>
+
+<p>选择 GPT 标签类型并点击 Enter 。</p>
+<p>然后 从底部菜单中选择 Free Space 并点击 New 。您可以使用 Tab 或 箭头键浏览菜单选项。</p>
+<p>(如果你不想要之前的数据，直接delete完，硬干)</p>
+<p>以 MB ( 1024M ) 为单位键入分区大小，然后按 Enter 键。</p>
+<p>在 &#x2F;dev&#x2F;sda1 分区仍然被选中的情况下，从底部菜单中选择 Type 并选择 EFI System 分区类型。 </p>
+<p>现在，您已完成 EFI 系统分区的配置。</p>
+<p>创建交换分区</p>
+<p>现在让我们使用相同的过程创建 Swap 分区。再次选择剩余的 Free space 和 并点击 New 。</p>
+<p>以 GB ( 4G ) 为单位键入分区大小，然后按 Enter 键。</p>
+<p>在 &#x2F;dev&#x2F;sda2 分区仍然被选中的情况下，从底部菜单中选择 Type 并选择 Linux swap 分区类型。</p>
+<p>现在，您已经完成了 Swap 分区的配置。</p>
+<p>创建根分区</p>
+<p>最后，您需要创建根 ( &#x2F; ) 分区。再次选择剩余的 Free space 并点击 New 。</p>
+<p>对于 ( &#x2F; ) 大小，保留默认大小值。这意味着，所有剩余的可用空间。按 Enter 键。</p>
+<p>在 &#x2F;dev&#x2F;sda3 分区仍然被选中的情况下，从底部菜单中选择 Type 并选择 Linux filesystem 分区类型。</p>
+<p>现在，您已经完成了根分区的配置。</p>
+<p>将更改写入磁盘</p>
+<p>接下来，您需要保存所做的更改。选择 Write 从底部菜单和命中 Enter 。</p>
+<p>键入 yes 并按下 Enter 键。</p>
+<p>我们到此结束。选择 Quit 并按下 Enter 即可。</p>
+<p> 创建文件系统</p>
+<p>现在您已准备好磁盘分区，是时候在其上创建文件系统了。但是让我们首先通过运行来查看分区表摘要：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk -l</span><br></pre></td></tr></table></figure>
+
+<p>该 &#x2F;dev&#x2F;sda 磁盘应该有三个分区（ &#x2F;dev&#x2F;sda1 ， dev&#x2F;sda2 ，和 &#x2F;dev&#x2F;sda3 ）</p>
+<p><strong>EFI分区格式化</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkfs.fat -F32 /dev/sda1</span><br><span class="line">mkfs.ext4 /dev/sda3</span><br></pre></td></tr></table></figure>
+
+<p><strong>创建swap分区</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkswap /dev/sda2</span><br><span class="line">swapon /dev/sda2</span><br></pre></td></tr></table></figure>
+
+<p><strong>挂载分区：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda3 /mnt</span><br><span class="line">mkdir -p /mnt/boot/efi</span><br><span class="line">mount /dev/sda1 /mnt/boot/efi</span><br></pre></td></tr></table></figure>
+
+<p><strong>查看磁盘分区情况</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsblk -f</span><br></pre></td></tr></table></figure>
+
+<p><strong>更新为国内镜像源</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reflector --country China --age 72 --sort rate --protocol https --save /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure>
+
+<p>将最新的镜像源更新为国内的，保存在&#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist目录下</p>
+<p>也可以手动替换到“&#x2F;etc&#x2F;pacman.d&#x2F;mirrorlistg”中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Server = https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch</span><br><span class="line">Server = https://mirrors.cqu.edu.cn/archlinux/$repo/os/$arch</span><br><span class="line">Server = https://mirrors.dgut.edu.cn/archlinux/$repo/os/$arch</span><br><span class="line">Server = https://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch</span><br><span class="line">Server = https://mirrors.nju.edu.cn/archlinux/$repo/os/$arch</span><br><span class="line">Server = https://mirror.redrock.team/archlinux/$repo/os/$arch</span><br><span class="line">Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux/$repo/os/$arch</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</span><br><span class="line">Server = https://mirrors.xjtu.edu.cn/archlinux/$repo/os/$arch</span><br></pre></td></tr></table></figure>
+
+<p>如果到这一步 大哥畅通无阻  那只能说牛批  ， 开始安装ARCH</p>
+<h3 id="ArchLinux-安装"><a href="#ArchLinux-安装" class="headerlink" title="ArchLinux 安装"></a>ArchLinux 安装</h3><p>安装基本系统（包括linux内核以及基础软件包），这里相比参考文章多给了几个软件包，因为这些对用户来说还是比较重要的 ，有几种内核可以安装：</p>
+<p>普通内核(linux linux-headers)<br>lts稳定版内核(linux-lts linux-lts-headers)<br>zen内核(linux-zen,linux-zen-headers)<br>按自己的需求安装就可以</p>
+<p>这里需要提前说一下，linux-zen 内核不支持 nvidia 显卡，有这个需求的就别装了，如果是原版 linux 内核的话，就要做好随时滚挂的准备，最近的 5.18 内核更新就会导致 nvidia-5.15 版本驱动失效无法开机，如果你希望稳定使用，就选择 linux-lts 内核和linux-lts-headers，并安装相应的 nvidia-lts 驱动（后面会有详细说明），不过不用太担心，即便是系统安装完成，你也可以随时切换自己想要的内核版本。</p>
+<p>建议安装LTS内核</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pacstrap /mnt base linux-lts linux-lts-headers linux-firmware base-devel （LTS内核）</span><br><span class="line">或者</span><br><span class="line">pacstrap /mnt base linux linux-headers linux-firmware base-devel （普通内核）</span><br></pre></td></tr></table></figure>
+
+<p>如安装报错 ERROR: Failed to install packages to new root </p>
+<p>尝试以下命令再继续安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Sy archlinux-keyring</span><br></pre></td></tr></table></figure>
+
+<p>写入分区表：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
+
+<p> 使用如下命令进入新系统，进入后会显示[root@archiso &#x2F;]#</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure>
+
+<p>配置系统<br>我解释一下这都是干嘛的。</p>
+<p>vim：文本编辑器，可替代有neovim，nano,其中nano对新手比较友好，推荐经验较少或者刚入坑的同志使用。<br>iwd,networkmanager：用iwd作为nm的backend进行使用。（但是我这样使用在i3下会出现不少问题，比如网络经常自动断，且短时间无法重连等(KDE也会出现，但感觉没有i3频繁，我觉得可能是命令行的原因，安装完成之后卸载掉networkmanager问题解决。另外，如果需要使用网线和usb网络共享，networkmanager必须安装，最好加装一个dhcpcd）<br>ttf-dejavu：开源字体<br>sudo：用于非root用户暂时获取root权限<br>bluez：蓝牙模块<br>usbmuxd：参考文章没给这个。现在系统中使用的网络来自于live系统，不装这个的话，重启是无法通过usb连接手机共享网络的，根据个人情况选择，建议安装。<br>wqy-zenhei：中文字体，避免进入系统后无法显示中<br>dhcpcd：连网线用<br>pacman -S neovim iwd ttf-dejavu sudo bluez usbmuxd networkmanager dhcpcd wqy-zenhei<br>neovim和vim的启动命令是不一样的，neovim为“nvim”，vim是“vim”我一般会通过软链接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /bin/nvim /bin/vim</span><br><span class="line">ln -s /bin/nvim /bin/vi</span><br></pre></td></tr></table></figure>
+
+<p> 将他们链接起来看，这样的话，通过“vim”“vi”命令也可以启动neovim了。</p>
+<p>设置时区和时间</p>
+<p>依次输入下面的命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line"></span><br><span class="line">hwclock --systohc</span><br></pre></td></tr></table></figure>
+
+<p> 设置语言</p>
+<p>输入“vim &#x2F;etc&#x2F;locale.gen”，删除前面的“#”，保存。</p>
+<p><img src="https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/image-20220919171722856.png" alt="image-20220919171722856"></p>
+<p>输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">locale-gen</span><br><span class="line"></span><br><span class="line">echo LANG=zh_CN.UTF-8 &gt;&gt; /etc/locale.conf</span><br></pre></td></tr></table></figure>
+
+<p>设置root用户的密码</p>
+<p>输入“passwd”，再输入密码，密码不会显示。</p>
+<p>设置主机名</p>
+<p>主机名的开头和结尾字符不允许是连字符。 主机名强烈建议不要用数字开头,尽管这一条不是强制的。 用小写字母而不用大写字母。</p>
+<p>echo 主机名 &gt;&gt; &#x2F;etc&#x2F;hostname<br>设置网络</p>
+<p>编辑 “vim &#x2F;etc&#x2F;hosts”</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 localhost</span><br><span class="line">::1 localhost</span><br><span class="line">127.0.1.1 主机名.localdomain 主机名</span><br></pre></td></tr></table></figure>
+
+<p>安装引导并重启系统<br>pacman -S grub efibootmgr   (安装grub)<br>grub-install &#x2F;dev&#x2F;sda    (注意：选择的是整个硬盘)<br>创建grub配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+
+<p> 重启系统</p>
+<p>exit    (退出新系统，回到live系统)<br>umount -R &#x2F;mnt    (递归卸载 &#x2F;mnt 中的磁盘)<br>reboot    (重启)<br>重启后登录root，密码是刚才设置的</p>
+<p>打开联网服务和蓝牙</p>
+<ol>
+<li>首先激活服务</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">systemctl start iwd.service</span><br><span class="line">systemctl enable iwd.service</span><br><span class="line">systemctl start systemd-resolved.service</span><br><span class="line">systemctl enable systemd-resolved.service</span><br><span class="line">systemctl enable bluetooth.service</span><br><span class="line">systemctl enable NetworkManager</span><br><span class="line">systemctl enable dhcpcd</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>配置网络连接和DNS</li>
+</ol>
+<p>输入“vim &#x2F;etc&#x2F;iwd&#x2F;main.conf”，把下面的文字打进去，保存。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[General]</span><br><span class="line">EnableNetworkConfiguration=true</span><br><span class="line">NameResolvingService=systemd</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>安装了netwokmanager的配置</li>
+</ol>
+<p>如果安装了networkmanager，则需要将backend服务修改为iwd，总体上iwd比wpa好用很多。</p>
+<p>输入“vim &#x2F;etc&#x2F;NetworkManager&#x2F;NetworkManager.conf”，把下面的文字打进去，保存。（vim的光标移动、删除和保存退出等命令请另行百度。）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[device]</span><br><span class="line">wifi.backend=iwd</span><br></pre></td></tr></table></figure>
+
+<p>如果只安装networkmanager而不安装iwd的话，是不需要这一步的，nm会使用默认的wpa。（猜测）</p>
+<p>安装一些硬件设备<br>    1.CPU编码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -S intel-ucode    (intel的cpu装这个)</span><br><span class="line">pacman -S amd-ucode    (amd的cpu装这个)</span><br></pre></td></tr></table></figure>
+
+<p>注意是 CPU 编码，不是显卡</p>
+<ol start="2">
+<li>显卡驱动</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pacman -S xf86-video-intel（Intel核心显卡驱动，用Intel核显就装，否则不用装）</span><br><span class="line">pacman -S mesa nvidia(-lts) nvidia-settings nvidia-dkms nvidia-utils nvidia-prime（nvidia显卡驱动，用nvidia显卡就装，否则不用装）</span><br><span class="line">pacman -S xf86-video-amdgpu (AMD显卡驱动，用amd显卡的就装)</span><br><span class="line">这里举两个例子，我的笔记本，i7-11代，搭配intel核显以及3050显卡，所以安装前两个。我的台式机，e3-1230垃圾CPU，搭配HD6950显卡，所以装第三个。nvidia-dkms 与 nvidia-lts 不兼容，如果装lts驱动的话无需安装dkms 。</span><br><span class="line"></span><br><span class="line">注意：nvidia驱动的安装与前面选择的内核有关，如果你安装的是linux-lts内核，那么需要将nvidia更换为nvidia-lts，linux-zen不支持nvidia显卡（务必对号入座）</span><br></pre></td></tr></table></figure>
+
+<p>新建一个用户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -m -G wheel -s /bin/bash 用户名    (添加进入wheel用户组，并将bash作为启动命令)</span><br></pre></td></tr></table></figure>
+
+<p>passwd 用户名<br>然后输入</p>
+<p>visudo<br>如果报错的话(应该不会)，就改为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sudoers</span><br></pre></td></tr></table></figure>
+
+<p> 找到如下内容，取消掉“# %wheel ALL&#x3D;(ALL:ALL) ALL”前面的“# ”</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">## User privilege specification</span><br><span class="line">##</span><br><span class="line">root ALL=(ALL:ALL) ALL</span><br><span class="line"> </span><br><span class="line">## Uncomment to allow members of group wheel to execute any command</span><br><span class="line"># %wheel ALL=(ALL:ALL) ALL</span><br><span class="line"> </span><br><span class="line">## Same thing without a password</span><br><span class="line"># %wheel ALL=(ALL:ALL) NOPASSWD: ALL</span><br></pre></td></tr></table></figure>
+
+<p>这里说一下，取消“# %wheel ALL&#x3D;(ALL:ALL) NOPASSWD: ALL”前的“# ”也是可以的，区别就在于，取消这一行后，wheel组的用户使用 sudo 就不用输密码了，如果你是新手，不建议这么做，如果你是老鸟，可以考虑取消NOPASSWD 所在的这一行。（我取消的是NOPASWD这行，图方便）</p>
+<p>重启系统</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<p>此时的系统已经基本可以使用了，但是还没有配置图形界面，如果你不需要图形界面，就只需登陆用户名就可以使用了。</p>
+<h3 id="ArchLiux-桌面安装"><a href="#ArchLiux-桌面安装" class="headerlink" title="ArchLiux 桌面安装"></a>ArchLiux 桌面安装</h3><p>！！！注意：从这里开始，如果登陆的是普通用户，则所有的pacman和systemctl都需要 sudo ， 如果嫌麻烦，可以先在 ~&#x2F;.bashrc 中添加 “alias pacman&#x3D;’sudo pacman’和alias systemctl&#x3D;’sudo systemctl’”，我这里就不多写sudo了。如果提示需要权限，同样加sudo即可。所以这部分安装建议登陆root用户。</p>
+<p>首先需要选择X11或者是Wayland，现在来看Wayland是比较先进的，但为了方便和兼容性还是用X11吧。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S xorg</span><br></pre></td></tr></table></figure>
+
+<p>这个是必须安装的，后面的DE和WM都是基于x服务。</p>
+<p><strong>安装KDE桌面</strong></p>
+<p>特点：美观，比较稳定，自定义功能强大，配置方便（最推荐）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S plasma sddm konsole dolphin kate ark okular spectacle yay</span><br></pre></td></tr></table></figure>
+
+<p>重启</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable sddm</span><br></pre></td></tr></table></figure>
+
+<p><strong>安装Gnome桌面</strong></p>
+<p>特点：自定义功能丰富（但是被阻隔了），</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -S gnome</span><br><span class="line">systemctl <span class="built_in">enable</span> gdm</span><br></pre></td></tr></table></figure>
+
+<p>我安装的是Gnome桌面，不要问我为什么不装第一个，第一个装不上去，焯！！！！</p>
+<p><strong>中文输入法</strong></p>
+<p>推荐使用 fcitx5</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S fcitx5 fcitx5-chinese-addons fcitx5-gtk fcitx5-qt fcitx5-configtool</span><br></pre></td></tr></table></figure>
+
+<p>然后添加环境变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/environment</span><br><span class="line"></span><br><span class="line">GTK_IM_MODULE=fcitx</span><br><span class="line">QT_IM_MODULE=fcitx</span><br><span class="line">XMODIFIERS=@im=fcitx</span><br><span class="line">INPUT_METHOD=fcitx</span><br><span class="line">SDL_IM_MODULE=fcitx</span><br><span class="line">GLFW_IM_MODULE=ibus</span><br></pre></td></tr></table></figure>
+
+<p>‘然后设置开机启动即可（桌面环境不同，方法也不同），这里提供一个简单的思路。</p>
+<p>tty 下面是不需要中文输入法的（也用不了），所以修改 ~&#x2F;.xinitrc ，添加代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fcitx5 -d &amp;    (后台运行fcitx5，且开机自启)</span><br></pre></td></tr></table></figure>
+
+<p>wiki描述</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">注意：</span><br><span class="line">如果您使用的桌面环境是兼容 XDG 的（例如 KDE、GNOME、Xfce、LXDE等），则 无需 此步骤（添加自启）。</span><br><span class="line">如果使用i3、awesome等窗口管理器，需要在其脚本中添加 Fcitx5 以实现自启动。例如，如果您使用 i3 或 sway ,可以在配置文件中添加exec --no-startup-id fcitx5 -d</span><br><span class="line">如果使用dwm，则需要添加 autostart 补丁。在 ~/.dwm/autostart.sh 中添加fcitx5 -d</span><br></pre></td></tr></table></figure>
+
+<h3 id="系统切换完成"><a href="#系统切换完成" class="headerlink" title="系统切换完成"></a>系统切换完成</h3><p>开始安装环境吧</p>
+<p><img src="https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/image-20220919172627761.png" alt="image-20220919172627761"></p>
+<p>写在最后：</p>
+<p>​	组成了众多文章：</p>
+<ol>
+<li>CSDN</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://blog.csdn.net/love906897406/article/details/126109464?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166357655316800180660005%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=166357655316800180660005&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-126109464-null-null.142^v47^body_digest,201^v3^control&amp;utm_term=archlinux%E5%AE%89%E8%A3%85&amp;spm=1018.2226.3001.4187</span><br></pre></td></tr></table></figure>
+
+<p>2.知乎</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://zhuanlan.zhihu.com/p/433920079</span><br></pre></td></tr></table></figure>
+
+
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://zhonghanlu.club">仲寒露</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zhonghanlu.club/archives/27ab9b42.html">https://zhonghanlu.club/archives/27ab9b42.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zhonghanlu.club" target="_blank">Sparksfly's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ArchLinux/">ArchLinux</a><a class="post-meta__tags" href="/tags/System/">System</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/20220814224611.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/archives/eb9166f8.html"><img class="prev-cover" src="https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/20220814224611.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">JUC并发编程</div></div></a></div><div class="next-post pull-right"><a href="/archives/38da91cc.html"><img class="next-cover" src="https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/20220814224611.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Kotlin Base</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NzAzMy8zMzQ5Nw=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/u=2492658440,3997118136&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">仲寒露</div><div class="author-info__description">欢迎来到小仲的博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/zhonghanlu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zhonghanlu" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https:1420865757@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到SparksFly·Club</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E4%B9%8B%E5%89%8D"><span class="toc-number">1.</span> <span class="toc-text">切换之前</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%B6%E4%BD%9C%E9%95%9C%E5%83%8F"><span class="toc-number">2.</span> <span class="toc-text">制作镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#U%E7%9B%98%E5%90%AF%E5%8A%A8%E5%9F%BA%E7%A1%80%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">U盘启动基础安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ArchLinux-%E5%AE%89%E8%A3%85"><span class="toc-number">4.</span> <span class="toc-text">ArchLinux 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ArchLiux-%E6%A1%8C%E9%9D%A2%E5%AE%89%E8%A3%85"><span class="toc-number">5.</span> <span class="toc-text">ArchLiux 桌面安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E5%88%87%E6%8D%A2%E5%AE%8C%E6%88%90"><span class="toc-number">6.</span> <span class="toc-text">系统切换完成</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/archives/15c82059.html" title="Shell （尚硅谷转载）"><img src="https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/20220814224631.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Shell （尚硅谷转载）"/></a><div class="content"><a class="title" href="/archives/15c82059.html" title="Shell （尚硅谷转载）">Shell （尚硅谷转载）</a><time datetime="2023-11-15T09:32:38.923Z" title="发表于 2023-11-15 09:32:38">2023-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/3f9283e7.html" title="Netty入门-第一话"><img src="https://npm.elemecdn.com/lql_static@latest/logo/netty_logo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Netty入门-第一话"/></a><div class="content"><a class="title" href="/archives/3f9283e7.html" title="Netty入门-第一话">Netty入门-第一话</a><time datetime="2023-02-01T16:59:36.000Z" title="发表于 2023-02-01 16:59:36">2023-02-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/83619254.html" title="GO语言--上"><img src="https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/20220814224655.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GO语言--上"/></a><div class="content"><a class="title" href="/archives/83619254.html" title="GO语言--上">GO语言--上</a><time datetime="2022-12-14T18:04:10.000Z" title="发表于 2022-12-14 18:04:10">2022-12-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/eb9166f8.html" title="JUC并发编程"><img src="https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/20220814224611.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JUC并发编程"/></a><div class="content"><a class="title" href="/archives/eb9166f8.html" title="JUC并发编程">JUC并发编程</a><time datetime="2022-09-20T18:42:01.000Z" title="发表于 2022-09-20 18:42:01">2022-09-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/27ab9b42.html" title="ArchLinux install"><img src="https://cdn.zenless.top/gh/zhonghanlu/PicGo/img/20220814224611.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ArchLinux install"/></a><div class="content"><a class="title" href="/archives/27ab9b42.html" title="ArchLinux install">ArchLinux install</a><time datetime="2022-09-19T16:34:03.000Z" title="发表于 2022-09-19 16:34:03">2022-09-19</time></div></div></div></div></div></div></main><footer id="footer" style="background: rgba(165, 42, 42, 0.3)"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By 仲寒露</div><div class="footer_custom_text">又见面啦</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">簡</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="8587379789" data-server="tencent" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":250,"height":400},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
